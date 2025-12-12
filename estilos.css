@@ -1,0 +1,808 @@
+/* estilos.css - Diseño Profesional Completo */
+
+/* ========== RESET Y BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========== HEADER Y NAVEGACIÓN ========== */
+.header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #c41e3a;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.logo a:hover {
+    color: #8b1429;
+}
+
+.nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.menu > li {
+    position: relative;
+}
+
+.menu a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #c41e3a;
+}
+
+/* Submenú */
+.menu-destinos {
+    position: relative;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 220px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding: 0.5rem 0;
+}
+
+.menu-destinos:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.submenu li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.submenu li:last-child {
+    border-bottom: none;
+}
+
+.submenu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.submenu a:hover {
+    background: #f8f8f8;
+    color: #c41e3a;
+    padding-left: 2rem;
+}
+
+/* Menú móvil toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #c41e3a;
+    transition: all 0.3s;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b1429 100%);
+    color: #fff;
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== BOTONES ========== */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: #fff;
+    color: #c41e3a;
+}
+
+.btn-primary:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+    background: #c41e3a;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background: #8b1429;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 8px;
+    font-size: 0.9rem;
+}
+
+.btn-whatsapp:hover {
+    background: #20BA5A;
+}
+
+/* ========== SECCIONES ========== */
+.destinos-preview, .destinos-section {
+    padding: 80px 20px;
+    background: #f8f8f8;
+}
+
+.destinos-preview h2, .destinos-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.grid-destinos, .destinos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.destino-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.destino-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+}
+
+.destino-card img, .card-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-image {
+    position: relative;
+}
+
+.categoria-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #c41e3a;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.card-content p {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* ========== INFO SECTION ========== */
+.info-section {
+    padding: 80px 20px;
+    background: #fff;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    text-align: center;
+}
+
+.info-item {
+    padding: 2rem;
+}
+
+.info-item .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.info-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #c41e3a;
+}
+
+.info-item p {
+    color: #666;
+}
+
+/* ========== PAGE HEADER ========== */
+.page-header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b1429 100%);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+}
+
+/* ========== FILTROS ========== */
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filtro-btn {
+    padding: 10px 25px;
+    background: #fff;
+    border: 2px solid #c41e3a;
+    color: #c41e3a;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.filtro-btn:hover, .filtro-btn.active {
+    background: #c41e3a;
+    color: #fff;
+}
+
+/* ========== DESTINO INDIVIDUAL ========== */
+.destino-hero {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-overlay p {
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.destino-content {
+    padding: 60px 20px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.main-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #c41e3a;
+}
+
+.main-content h3 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    color: #333;
+}
+
+.main-content p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.main-content ul {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.main-content li {
+    margin-bottom: 0.8rem;
+    line-height: 1.8;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.gallery img {
+    border-radius: 8px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.consejos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.consejo-item {
+    background: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.consejo-item span {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar .info-box,
+.sidebar .cta-box,
+.sidebar .otros-destinos {
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.sidebar h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #c41e3a;
+}
+
+.sidebar p {
+    margin-bottom: 0.5rem;
+}
+
+.info-detalle p {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.info-detalle p:last-child {
+    border-bottom: none;
+}
+
+.otros-destinos ul {
+    list-style: none;
+}
+
+.otros-destinos li {
+    margin-bottom: 0.8rem;
+}
+
+.otros-destinos a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem;
+    display: block;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.otros-destinos a:hover {
+    background: #fff;
+    color: #c41e3a;
+    padding-left: 1rem;
+}
+
+/* ========== CONTACTO ========== */
+.contacto-section {
+    padding: 60px 20px;
+}
+
+.contacto-section h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+}
+
+.contacto-info {
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.contacto-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #c41e3a;
+}
+
+.contacto-info .info-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.contacto-info .info-item .icon {
+    font-size: 2rem;
+}
+
+.contacto-info .info-item h4 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.contacto-info .info-item p {
+    color: #666;
+}
+
+/* ========== FORMULARIO ========== */
+.contacto-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+.contacto-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #c41e3a;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-note {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* ========== CTA SECTION ========== */
+.cta-section {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b1429 100%);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 40px 20px 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-column h4 {
+    margin-bottom: 1rem;
+    color: #c41e3a;
+}
+
+.footer-column p {
+    line-height: 1.8;
+    color: #ddd;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: #c41e3a;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #555;
+    color: #999;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .container-header {
+        flex-wrap: wrap;
+    }
+    
+    .menu-toggle {
+        display: flex;
+        order: 3;
+    }
+    
+    .nav {
+        width: 100%;
+        order: 4;
+    }
+    
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
+    }
+    
+    .menu.active {
+        max-height: 500px;
+    }
+    
+    .submenu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        padding-left: 1rem;
+        background: #f8f8f8;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .content-grid,
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-destinos,
+    .destinos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filtros {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filtro-btn {
+        width: 200px;
+    }
+    
+    .destino-hero {
+        height: 300px;
+    }
+    
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
